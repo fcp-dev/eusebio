@@ -6,7 +6,6 @@ import FootballWidget from '../../components/football-widget';
 import Layout from '../../components/layout';
 import TabPanel from '../../components/tab-panel';
 import TeamMemberList from '../../components/team-member-list';
-import { isMobile } from '../../utils/helper';
 import '../../styles/team.scss';
 
 interface ITeamMember {
@@ -59,7 +58,7 @@ export default function TeamPage({ data, pageContext }: TeamPageProps) {
 
   return (
     <Layout>
-      <Paper className={isMobile() ? 'tabs-mobile' : 'tabs'}>
+      <Paper className="tabs">
         <Tabs value={value} onChange={handleChange} TabIndicatorProps={{style: {background:'none'}}}>
           <Tab className="tab" label={t("players")}/>
           <Tab className="tab" label={t("matches")}/>
@@ -67,7 +66,7 @@ export default function TeamPage({ data, pageContext }: TeamPageProps) {
         </Tabs>
       </Paper>
       <TabPanel value={value} index={0}>
-         <TeamMemberList teamMemberData={data.allMarkdownRemark.nodes}/>
+        <TeamMemberList teamMemberData={data.allMarkdownRemark.nodes}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className="utils-margin-bottom-20"></div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { useI18next } from 'gatsby-plugin-react-i18next';
-import { Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
 import Layout from '../components/layout';
 import NewsItem from '../components/news-item';
 import '../styles/start.scss';
@@ -14,7 +14,8 @@ interface INode {
     date: string,
     slug: string,
     title: string
-  }
+  },
+  html: string
 };
 
 type StartPageProps = {
@@ -32,20 +33,33 @@ export default function StartPage({ data }: StartPageProps) {
 
   return (
     <Layout>
-      <div className="welcome-container">
-        <div className="welcome-content">
-          <Typography variant="h4">
-            <div dangerouslySetInnerHTML={{__html: t("welcomeText", {interpolation: {escapeValue: false}})}} />
-          </Typography>
+      <div className="welcome-banner">
+        <div className="grid-item-left"></div>
+        <div className="grid-item-middle">
+          <div className="welcome-container">
+            <Typography className="welcome-title" variant="h1">
+              <Box fontStyle="italic">{t("welcome")}</Box>
+            </Typography>
+            <div className="welcome-blockquote-container">
+              <blockquote className="welcome-blockqoute">
+                <Typography className="welcome-blockquote-text" component="p">{t("welcomeText")}</Typography>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div className="grid-item-middle-right">
+          <div className="welcome-image1"></div>
         </div>
       </div>
-      <div className="separator">
-        <Typography variant="h6">{t("news")}</Typography>
+      <div className="seperator-container">
+        <div className="separator">
+          <Typography variant="h6">{t("news")}</Typography>
+        </div>
       </div>
       <Grid container>
         {newsList.map((news, index) => (
-          <Grid item xs={12} key={index}>
-            <NewsItem title={news.frontmatter.title} date={news.frontmatter.date} link={news.fields.slug}/>
+          <Grid item xs={12} sm={6} key={index}>
+            <NewsItem title={news.frontmatter.title} date={news.frontmatter.date} link={news.fields.slug} preview={news.html}/>
           </Grid>
         ))}
       </Grid>
@@ -68,6 +82,7 @@ export const pageQuery = graphql`
           date(formatString: "DD.MM.YYYY")
           title
         }
+        html
       }
     }
   }

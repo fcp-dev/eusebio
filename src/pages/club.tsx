@@ -50,7 +50,7 @@ export default function ClubPage() {
       <div className="accordion">
         {historyItems.map((historyItem, index) => (
           <Accordion square key={index}>
-            <AccordionSummary className="accordion-summary" expandIcon={<ExpandMoreIcon/>}>
+            <AccordionSummary className="accordion-summary" expandIcon={<ExpandMoreIcon className="expand-icon"/>}>
               <Typography variant="h6">
                 {historyItem.startYear} {t("until")} {historyItem.endYear === null ? t("today") : historyItem.endYear}
               </Typography>

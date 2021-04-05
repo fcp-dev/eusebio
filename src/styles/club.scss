@@ -3,7 +3,12 @@
 }
 
 .accordion-summary {
-  background-color: #efefef;
+  color: #fff;
+  background-color: #c70101;
+}
+
+.expand-icon {
+  color: #fff;
 }
 
 .history-image-container {
@@ -12,6 +17,5 @@
     width: 100%;
     height: auto;
     margin: auto;
-    border-radius: 10px;
   }
 }

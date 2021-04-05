@@ -35,7 +35,8 @@
   "carText": "Aus Norden: Tullastraße Richtung Lembergallee folgen. Im Kreisverkehr dritte Ausfahrt (Engesserstraße) nehmen. Engesserstraße für circa 900 Meter folgen und dann rechts auf Hermann-Mitsch-Straße abbiegen. Hermann-Mitsch-Straße circa 1 Kilometer folgen. Die Sportanlage befindet sich auf der rechten Seite.<br><br>Aus Osten: B31 Richtung Karlsruhe, Ausfahrt Bischofslinde. Berliner Allee folgen bis Messe Freiburg. Links auf Hermann-Mitsch-Straße abbiegen. Hermann-Mitsch-Straße circa 1 Kilometer folgen. Die Sportanlage befindet sich auf der rechten Seite.<br><br>Aus Süden und Westen: Granadaallee bis Ikea folgen. Rechts auf Hermann-Mitsch-Straße abbiegen. Hermann-Mitsch-Straße circa 500 Meter folgen. Die Sportanlage befindet sich auf der linken Seite.",
   "address": "Adresse",
   "start": "Startseite",
-  "welcomeText": "Der FC Portugiesen wünscht allen Mitglieder, Freunden und <br>Sponsoren<br>Frohe Weihnachten und ein gesundes Neues Jahr.<br>Bleiben Sie Gesund!",
+  "welcome": "Herzlich Willkommen",
+  "welcomeText": "Wir wünschen euch ein frohes und gesegnetes Osterfest. Genießt die Zeit mit der Familie und die ruhigen Tage. Bleiben Sie Gesund!",
   "sponsors": "Sponsoren",
   "history": {
     "title": "Historie",
@@ -79,5 +80,6 @@
   "table": "Tabelle",
   "noTableFound": "Keine Tabelle gefunden!",
   "matches": "Spielplan",
-  "noMatchesFound": "Keine Spiele gefunden!"
+  "noMatchesFound": "Keine Spiele gefunden!",
+  "readMore": "Weiterlesen"
 }
