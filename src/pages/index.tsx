@@ -42,7 +42,9 @@ export default function StartPage({ data }: StartPageProps) {
             </Typography>
             <div className="welcome-blockquote-container">
               <blockquote className="welcome-blockqoute">
-                <Typography className="welcome-blockquote-text" component="p">{t("welcomeText")}</Typography>
+                <Typography className="welcome-blockquote-text" component="p">
+                  {/*t("welcomeText")*/}
+                </Typography>
               </blockquote>
             </div>
           </div>
