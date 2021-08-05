@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, MouseEvent } from 'react';
+import React from 'react';
 import { Link, useI18next } from 'gatsby-plugin-react-i18next';
 import { Divider, IconButton, List, ListItem, ListItemText, SwipeableDrawer } from '@material-ui/core';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -26,9 +26,9 @@ export default function Header() {
 
   const [open, setOpen] = React.useState(false);
 
-  const toggleDrawer = (isOpen: boolean) => (event: KeyboardEvent | MouseEvent) => {
+  const toggleDrawer = (isOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (event && event.type === 'keydown') {
-      if (event instanceof KeyboardEvent && (event.key === 'Tab' || event.key === 'Shift')) {
+      if (((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')) {
         return;
       }
     }

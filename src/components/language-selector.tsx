@@ -20,7 +20,7 @@ export default function LanguageSelector() {
 
   return (
     <div>
-      <Button className="utils-color-white" aria-controls="language-selector" aria-haspopup="true" onClick={handleClick}>
+      <Button className="utils-color-white" onClick={handleClick}>
         <LanguageIcon fontSize="small"/> {selectedLanguage.toUpperCase()}
       </Button>
       <Menu 

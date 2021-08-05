@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { Accordion, AccordionSummary, AccordionDetails, Box, Typography } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -71,3 +72,17 @@ export default function ClubPage() {
     </Layout>
   );
 }
+
+export const languageQuery = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

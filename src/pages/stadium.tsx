@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { Box, Grid, Typography } from '@material-ui/core';
 import { MapContainer, Marker, TileLayer, Tooltip } from 'react-leaflet';
@@ -45,3 +46,17 @@ export default function StadiumPage() {
     </Layout>
   );
 }
+
+export const languageQuery = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

@@ -26,7 +26,16 @@ export default function NewsPage({ data }: NewsPageProps) {
 }
 
 export const newsQuery = graphql`
-  query findNewsBySlug($locale: String!, $slug: String!) {
+  query findNewsBySlug($locale: String!, $slug: String!, $language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    },
     markdownRemark(fields: { slug: { eq: $slug }, locale: { eq: $locale } }) {
       html
       frontmatter {
@@ -34,4 +43,4 @@ export const newsQuery = graphql`
       }   
     }
   }
-`
+`;

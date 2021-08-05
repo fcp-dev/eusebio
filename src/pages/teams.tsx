@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { Link, useI18next } from 'gatsby-plugin-react-i18next';
 import { ButtonBase, Grid, Typography } from '@material-ui/core';
 import Layout from '../components/layout';
@@ -54,3 +55,17 @@ export default function TeamOverviewPage() {
     </Layout>
   );
 }
+
+export const languageQuery = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

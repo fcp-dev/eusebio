@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { ThemeProvider } from '@material-ui/core';
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import MobileHeader from './mobile-header';
@@ -16,7 +16,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const { t } = useI18next();
 
-  let theme = createMuiTheme();
+  let theme = createTheme();
   theme = responsiveFontSizes(theme);
 
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { Typography } from '@material-ui/core';
 import Layout from '../components/layout';
 import Content from '../../content/text/content';
@@ -77,3 +78,17 @@ export default function LegalNoticePage() {
     </Layout>
   );
 }
+
+export const languageQuery = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

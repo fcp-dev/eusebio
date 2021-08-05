@@ -27,7 +27,7 @@ export default function SponsorsPage({ data }: SponsorsPageProps) {
 
   return (
     <Layout>
-      <Grid container direction="row" justify="center" alignItems="center" spacing={2}>
+      <Grid container direction="row" justifyContent="center" alignItems="center" spacing={2}>
       {sponsors.map((sponsor, index) => (
         <Grid item key={index}>
           <div className="sponsor-image-container">
@@ -41,7 +41,16 @@ export default function SponsorsPage({ data }: SponsorsPageProps) {
 }
 
 export const pageQuery = graphql`
-  query getSponsors {
+  query getSponsors($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    },
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/sponsors/" } },
       sort: { fields: [frontmatter___name], order: ASC },
@@ -55,4 +64,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

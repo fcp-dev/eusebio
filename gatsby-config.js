@@ -16,19 +16,26 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-react-i18next`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/locales`,
-        languages: [`de`, `pt`],
-        defaultLanguage: `de`
+        name: `content`,
+        path: `${__dirname}/content`,
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/content`,
+        name: `locales`,
+        path: `${__dirname}/src/locales`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locales`,
+        languages: [`de`, `pt`],
+        defaultLanguage: `de`
+      }
     }
   ]  
 }

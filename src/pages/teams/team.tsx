@@ -81,7 +81,16 @@ export default function TeamPage({ data, pageContext }: TeamPageProps) {
 }
 
 export const pageQuery = graphql`
-  query getTeamMembersById($teamId: Int!) {
+  query getTeamMembersById($teamId: Int!, $language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    },
     allMarkdownRemark(
       filter: { frontmatter: { teamId: { eq: $teamId } } },
       sort: { fields: [frontmatter___firstName], order: ASC }
@@ -96,4 +105,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

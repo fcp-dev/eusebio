@@ -68,7 +68,16 @@ export default function StartPage({ data }: StartPageProps) {
 }
 
 export const pageQuery = graphql`
-  query getNewsByLocale($locale: String!) {
+  query getNewsByLocale($locale: String!, $language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    },
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/news/" }, fields: { locale: { eq: $locale } } },
       sort: { fields: [frontmatter___date], order: DESC },
@@ -86,4 +95,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

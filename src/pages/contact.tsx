@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { Box, Typography } from '@material-ui/core';
 import Layout from '../components/layout';
@@ -123,3 +124,17 @@ export default function ContactPage() {
     </Layout>
   );
 }
+
+export const languageQuery = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
