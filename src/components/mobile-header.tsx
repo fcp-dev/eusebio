@@ -50,9 +50,11 @@ export default function Header() {
         </div>
         <div className="header-nav-menu">
         </div>
+        {/* 
         <div className="header-language-selector">
           <LanguageSelector/>
         </div>
+        */}
       </header>
       <SwipeableDrawer className="drawer" anchor="left" open={open} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)}>
         <div className="drawer-header">

@@ -30,9 +30,11 @@ export default function Header() {
             </li>
           </ul>
       </div>
+      {/*
       <div className="header-language-selector">
         <LanguageSelector/>
       </div>
+      */}
     </header>
   );
 };
