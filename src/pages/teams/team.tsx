@@ -43,11 +43,11 @@ export default function TeamPage({ data, pageContext }: TeamPageProps) {
   let tableWidgetId: string = '';
   switch(pageContext.teamId) {
     case 1:
-      tableWidgetId = '02D921TJE8000000VUM1DNOCVUJK772V';
+      tableWidgetId = '02FAKBUTSO000000VUM1DNPBVVC8O8D2';
       matchesWidgetId = '02D9BOH43K000000VUM1DNOAVS6TOAL6';
       break;
     case 2:
-      tableWidgetId = '02D9BMKRKK000000VUM1DNOCVUJK772V';
+      tableWidgetId = '02FAKCCT0O000000VUM1DNOTVSIG8NIT';
       matchesWidgetId = '02D9BOSE38000000VUM1DNOOVSR8K0D7';
       break;
     case 3:
