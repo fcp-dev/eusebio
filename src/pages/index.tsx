@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { Box, Grid, Typography } from '@material-ui/core';
+import FootballWidget from '../components/football-widget';
 import Layout from '../components/layout';
 import NewsItem from '../components/news-item';
 import '../styles/start.scss';
@@ -65,6 +66,13 @@ export default function StartPage({ data }: StartPageProps) {
           </Grid>
         ))}
       </Grid>
+      <div className="seperator-container">
+        <div className="separator">
+          <Typography variant="h6">Letzte/nächste Spiele</Typography>
+        </div>
+      </div>
+      <div className="utils-margin-bottom-20"></div>
+      <FootballWidget id="02FAV9H4FS000000VUM1DNOTVSIG8NIT" name="widget1" height="500"/>
     </Layout>
   );
 }

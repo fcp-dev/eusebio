@@ -36,6 +36,12 @@ module.exports = {
         languages: [`de`, `pt`],
         defaultLanguage: `de`
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-load-script`,
+      options: {
+        src: `https://www.fussball.de/static/layout/fbde2/egm/js/widget2.js`
+      }
+    },
   ]  
 }

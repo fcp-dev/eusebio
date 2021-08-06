@@ -6,16 +6,19 @@ declare function fussballdeWidgetAPI(): any;
 type FootballWidgetProps = {
   id: string,
   name: string,
+  height: string
 }
 
 class FootballWidget extends React.Component<FootballWidgetProps> {
   private id: string;
   private name: string;
+  private height: string;
 
   constructor(props: FootballWidgetProps) {
     super(props);
     this.id = props.id;
     this.name = props.name;
+    this.height = props.height;
   }
 
   componentDidMount() {
@@ -24,7 +27,7 @@ class FootballWidget extends React.Component<FootballWidgetProps> {
 
   render() {
     return(
-      <div className="widget-container">
+      <div className={`widget-container utils-height-${this.height}`}>
         <div className="widget-content" id={this.name}></div>
       </div>
     );

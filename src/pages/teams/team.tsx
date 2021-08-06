@@ -70,11 +70,11 @@ export default function TeamPage({ data, pageContext }: TeamPageProps) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className="utils-margin-bottom-20"></div>
-        <FootballWidget id={matchesWidgetId} name="widget1"/>
+        <FootballWidget id={matchesWidgetId} name="widget1" height="2500"/>
       </TabPanel>
       <TabPanel value={value} index={2}>
         <div className="utils-margin-bottom-20"></div>
-        <FootballWidget id={tableWidgetId} name="widget1"/>
+        <FootballWidget id={tableWidgetId} name="widget1" height="1100"/>
       </TabPanel>
     </Layout>
   );
